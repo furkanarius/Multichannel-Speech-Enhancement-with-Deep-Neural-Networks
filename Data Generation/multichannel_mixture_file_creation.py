@@ -20,12 +20,12 @@ def sanity_check(sound):
     return not('flac' in sound.lower() or 'wav' in sound.lower())
 
 ## Sound Input
-t_folder_input = '/Users/furkan/Downloads/ThesisData/TIMIT/'
-noise_folder = '/Users/furkan/Downloads/ThesisData/Noise_DEMAND/'
-sc_files = glob.glob('/Users/furkan/Downloads/ThesisData/speech_commands_v0.01/' + '/**/*.wav', recursive=True)
+t_folder_input = 'SPEECH_DATASET_PATH'
+noise_folder = 'NOISE_DATASET_PATH'
+sc_files = glob.glob('SOURCE_PATH_2' + '/**/*.wav', recursive=True)
 
 # Important to change
-folder = '/Users/furkan/Downloads/ThesisData/ALL_DATA/SpeechCommand_2Channel/'
+folder = 'OUTPUT_FOLDER_PATH'
 
 timit = 0
 sc = 1
