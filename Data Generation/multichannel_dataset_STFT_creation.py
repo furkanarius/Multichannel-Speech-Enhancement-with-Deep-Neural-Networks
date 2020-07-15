@@ -69,25 +69,10 @@ def convert_to_audio(outname,stft_magnitude,stft_phase,fs=8000,):
     wavfile.write(outname, rate=fs, data=converted_audio)
 
 # Sound Input
-folder = '/Users/furkan/Downloads/ThesisData/ALL_DATA/SpeechCommand_2Ch_Fixed/'
+folder = 'OUTPUT_PATH'
 all_sound_files = os.listdir(folder)
 mixture_files = [i for i in all_sound_files if "_" in i]
 clear_files = [i for i in all_sound_files if not "_" in i]
-
-
-def rando():
-    FrameSize = 256  # 512 under 16KHz time=32ms(normally 20~30ms )
-    Overlap = round(0.75 * FrameSize)
-    FFTSize = FrameSize  # FFT window size=FRAMESIZE
-    FrequencyBins = FrameSize // 2 + 1  # stft_matrix:np.ndarray [shape=(1 + n_fft/2, t)]
-    NumSegments = 8
-    audio_data, sr = librosa.load('/Users/furkan/PycharmProjects/thesis/FurkanTest/clean.wav', mono=False, sr=8000)
-    stft_segments = librosa.stft(audio_data, n_fft=FrameSize, hop_length=Overlap, win_length=FFTSize,
-                                 window=scipy.signal.hamming(FrameSize, sym=False))
-    absSTFT = np.abs(stft_segments)
-    cleanPhase = np.angle(stft_segments)
-    mag_stft_normalized = (absSTFT - np.mean(absSTFT))/np.std(absSTFT)
-    convert_to_audio('/Users/furkan/PycharmProjects/thesis/FurkanTest/converted.wav',mag_stft_normalized,cleanPhase)
 
 counter = 0
 for clear_audio in tqdm(clear_files[:2003]):
