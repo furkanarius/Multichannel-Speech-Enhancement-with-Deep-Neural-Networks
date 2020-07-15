@@ -1,7 +1,5 @@
 '''
-A simple example of using pyroomacoustics to simulate
-sound propagation in a shoebox room and record the result
-to a wav file.
+This file creates an h5.py file containing the magnitude spectrum (STFT) of the mixture and clean signals. 
 '''
 from __future__ import print_function
 import numpy as np
