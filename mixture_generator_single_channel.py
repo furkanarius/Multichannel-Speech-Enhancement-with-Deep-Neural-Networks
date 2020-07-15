@@ -12,14 +12,14 @@ def sanity_check(sound):
     return not('flac' in sound.lower() or 'wav' in sound.lower())
 
 ## Sound Input
-folder_input = "/Users/furkan/Downloads/ThesisData/LibriSpeech/train-clean-100/"
-f_folder_input = '/Users/furkan/Downloads/ThesisData/56spk_wav/'
-t_folder_input = '/Users/furkan/Downloads/ThesisData/TIMIT/'
-lj_folder_input = '/Users/furkan/Downloads/ThesisData/LJSpeech/wavs/'
-noise_folder = '/Users/furkan/Downloads/ThesisData/Noise/audio/'
+folder_input = "DATASET_PATH_1"
+f_folder_input = 'DATASET_PATH_2'
+t_folder_input = 'DATASET_PATH_3'
+lj_folder_input = 'DATASET_PATH_4'
+noise_folder = 'NOISE_DATASET_1'
 
 # Important to change
-folder = '/Users/furkan/Downloads/ThesisData/ALL_DATA/SingleNoiseNoDelay/'
+folder = 'OUTPUT_PATH'
 
 # change based on needs
 fs = 16000
@@ -30,25 +30,25 @@ for i in range(5000):
 
     # Sound Input
     if ls == 1:
-        source_random = random.choice(os.listdir("/Users/furkan/Downloads/ThesisData/LibriSpeech/train-clean-100"))
+        source_random = random.choice(os.listdir(folder_input))
         if sanity_check(source_random):
             continue
         source_random = folder_input + source_random
 
     elif f == 1:
-        source_random = random.choice(os.listdir("/Users/furkan/Downloads/ThesisData/56spk_wav"))
+        source_random = random.choice(os.listdir(f_folder_input))
         if sanity_check(source_random):
             continue
         source_random = f_folder_input + source_random
 
     elif timit == 1:
-        source_random = random.choice(os.listdir("/Users/furkan/Downloads/ThesisData/TIMIT"))
+        source_random = random.choice(os.listdir(t_folder_input))
         if sanity_check(source_random):
             continue
         source_random = t_folder_input + source_random
 
     elif lj == 1:
-        source_random = random.choice(os.listdir("/Users/furkan/Downloads/ThesisData/LJSpeech/wavs"))
+        source_random = random.choice(os.listdir(lj_folder_input))
         if sanity_check(source_random):
             continue
         source_random = lj_folder_input + source_random
@@ -61,8 +61,7 @@ for i in range(5000):
     # Noise Read
 
     ## Noise Input
-    noise_random = random.choice(os.listdir("/Users/furkan/Downloads/ThesisData/Noise/audio"))
-    noise_random = 'DevNode3_ex267_247.wav'
+    noise_random = random.choice(os.listdir(noise_folder))
     noise_random = noise_folder + noise_random
     if sanity_check(noise_random):
         continue
