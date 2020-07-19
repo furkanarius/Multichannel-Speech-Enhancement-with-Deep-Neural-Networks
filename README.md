@@ -1,4 +1,4 @@
-# Multichannel-Speech-Enhancement-with-Deep-Neural-Networks
+# Multichannel Speech Enhancement with Deep Neural Networks - Beamforming with Autoencoders
 This project applies an autoencoder deep neural network to the multichannel speech enhancement problem. It takes the problem from dataset generation to the model training.
 
 ### Single Channel and Multichannel Dataset Generation
